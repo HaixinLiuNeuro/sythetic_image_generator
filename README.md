@@ -24,9 +24,24 @@ Assume Possion noise depending on the intensity of each pixel
 
 # Use instruction
 ## GUI
+![GUI Layout](https://github.com/HaixinLiuNeuro/sythetic_image_generator/blob/main/doc/UI_pic.png?raw=true)
+
+The GUI allows user to 
+1. specify parameters of the image and the noise of choice
+2. preview a few images with the input parameters
+3. generate a batch of images to a user specified folder
+
+Here is one preview example. Left is the sythetic fluorescence image (uint16), right is the corresponding label image (uint8). 
+
+![Preview Figure Example](https://github.com/HaixinLiuNeuro/sythetic_image_generator/blob/main/doc/UI_pic_preview_figure.png 'Preview Figure Example')
+
+Here is one generated tiff pair. 
+
+![Tiff Example](https://github.com/HaixinLiuNeuro/sythetic_image_generator/blob/main/doc/example_generated_tiffs.png 'Tiff Example')
 
 
 ## scripting
+Use  [example script](https://www.google.com) to directly write images to folder
 
 
 
