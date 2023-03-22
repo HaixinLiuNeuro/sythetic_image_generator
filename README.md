@@ -7,15 +7,15 @@ Yeasts are eukaryotic, single-celled microorganisms. They vary in size, but typi
 
 # Assumption
 ## cell
-Individual cells could be modeled as an ellipse with a and b vary from **2-8 um**, and a rotation from the axis. 
+Individual cells could be modeled as an ellipse with minor and major axes from **2-8 um**, and a rotation from the coordinates. 
 
-Because yeasts are eukaryotic, with nucleus. Most expressed fluorescent proteins are not in nucleus. Thus, a more realistic image would have a much lighter nucleus region. The nucleus can be modeled as circular structure. For simplicity, we can position a circle as nucleus at the ellipse center with 0.9 of the minor axis length, with fluorescent intensity as 0.1 of the indicated fluorescent intensity. 
+Because yeasts are eukaryotic, with nucleus. Most expressed fluorescent proteins are not in the nucleus. Thus, a more realistic image would have a much darker nucleus region. The nucleus can be modeled as circular structure. For simplicity, we can position a circle as the nucleus at the ellipse center, with some jitter.
 
 ## location
-Uniform distribution in the whole field. Allow cells to be cropped at the image edge. Currenly, we assume cells in the image can overlap. 
+Uniform distribution across the whole field. Allow cells to be cropped at the image edge. Currenly, we assume cells in the image can overlap. 
 
 ## noise
-Two types commom of noise to be added. 
+Two types commom of noise in microscopy to be added. 
 ### read noise:
 Assume Gaussian noise for all pixels in the image
 ### photon noise:
@@ -23,8 +23,11 @@ Assume Possion noise depending on the intensity of each pixel
 
 
 # Use instruction
+Add UI and helper_functions folders in your MATLAB path.
+
 ## GUI
 ![GUI Layout](https://github.com/HaixinLiuNeuro/sythetic_image_generator/blob/main/doc/UI_pic.png?raw=true)
+Run **sythetic_image_gen** in your MATLAB command line.
 
 The GUI allows user to 
 1. specify parameters of the image and the noise of choice
@@ -36,7 +39,7 @@ The GUI allows user to
 * image size (width and height) in pixel number
 * image scale um/pixel, as it uses actual size estimate of a cell to generate cells
 * the mean of the two axis of the ellipse to model a cell in um (default is 3 um)
-* the std of the axises of the ellipse of a cell in um (default is 0.5 um)
+* the std of the axes of the ellipse of a cell in um (default is 0.5 um)
 * the limit of axis length of cells in um (default is [1 6]). The first number is min, 2nd is max, separated by space.
 * number of cells to generate in each image: 1-255, as label image uses uint8 to code the mask identity. 
 * mean and std of the simulated cell: we simulate cell fluorescence intensity using a random draw from a Gaussian. The image is in uint16 so that the target value can be from 0 to 2^16. 
@@ -64,7 +67,7 @@ Here is one generated tiff pair.
 
 
 ## Scripting
-Use  [example script](https://www.google.com) to directly write images to folder
+Use  [example script](https://github.com/HaixinLiuNeuro/sythetic_image_generator/blob/main/example_script_batch_gen.m) to directly write images to folder
 
 
 # Future Feature Improvement
