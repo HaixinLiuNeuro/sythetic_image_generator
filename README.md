@@ -3,7 +3,7 @@ GUI and function package to generate fluorescence and labeled image pairs of yea
  
 # Background
 ## Yeast 
-Yeasts are eukaryotic, single-celled microorganisms. They vary in size, but typically 3-4 um in diameter. The commom strain used in labs has a size from 2-12 in ellipse shape. They are used as model organism to study cell biology and used as platforms for protein screening. They reproduce by mitosis, or budding (asymmetric division), which is a feature to be added in this package.
+Yeasts are eukaryotic, single-celled microorganisms. They vary in size, but typically 3-4 um in diameter. The commom strain used in labs has a size from 2-12 um in ellipse shape. They are used as model organism to study cell biology and used as platforms for protein screening. They reproduce by mitosis, or budding (asymmetric division), which is a feature to be added in this package.
 
 # Assumption
 ## cell
