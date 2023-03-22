@@ -5,6 +5,7 @@
 %     - angle:
 % OUTPUT:
 %     - R: 2x2 2D rotation matrix 
+
 function [R] = cell_rotate(angle)
 
 R = [cos(angle), -sin(angle);

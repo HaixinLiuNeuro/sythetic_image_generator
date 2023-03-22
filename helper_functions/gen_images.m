@@ -11,6 +11,7 @@
 %       - params: varible to return some default parameters in this function for reference. 
 %               reserved for future implementation. Currently returing an
 %               empty matrix
+
 function [im_f, im_l, params] = gen_images(im_info, ROIs)
 %% default parameters:
 nucleus_lit = 0.7; % nucleus is 70% darker than the cytoplasma

@@ -7,6 +7,8 @@
 %       - im_l: corresponding label image 
 %       - fd_n: folder path to write to
 %       - image_n: image number in this sequence (use to name the image)
+% OUTPUT:
+%       currently empty
 
 function [] = write_syth_image(im_f, im_l, fd_n, image_n)
 
