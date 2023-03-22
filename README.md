@@ -27,6 +27,7 @@ Add UI and helper_functions folders in your MATLAB path.
 
 ## GUI
 ![GUI Layout](https://github.com/HaixinLiuNeuro/sythetic_image_generator/blob/main/doc/UI_pic.png?raw=true)
+
 Run **sythetic_image_gen** in your MATLAB command line.
 
 The GUI allows user to 
