@@ -86,28 +86,27 @@ end
 % save the previewed image
 write_syth_image(im_f, im_l, fd_n, 1);
 if n_im > 1
-% make the rest of images
-for i_n = 2:n_im % can make parfor next 
-    
-    %% make ROIs
-    [ROIs, ~] = gen_rois(im_info);
-    %% generate images
-    [im_f, im_l, ~] = gen_images(im_info, ROIs);
-    
-    %% check noise selection and apply noise
-    if add_gaussian
-        if i_n == 1; disp('Applying Gaussian noise'); end
-        im_f = imnoise(im_f,'gaussian', im_info.noise_gau_mean, im_info.noise_gau_std);
-        % Gaussian white noise with mean= 0.03 and variance= 0.001 of the full scale (2^16 for uint16).
+    % make the rest of images
+    for i_n = 2:n_im % can make parfor next        
+        %% make ROIs
+        [ROIs, ~] = gen_rois(im_info);
+        %% generate images
+        [im_f, im_l, ~] = gen_images(im_info, ROIs);
+        
+        %% check noise selection and apply noise
+        if add_gaussian
+            if i_n == 1; disp('Applying Gaussian noise'); end
+            im_f = imnoise(im_f,'gaussian', im_info.noise_gau_mean, im_info.noise_gau_std);
+            % Gaussian white noise with mean= 0.03 and variance= 0.001 of the full scale (2^16 for uint16).
+        end
+        
+        if add_poisson
+            if i_n == 1; disp('Applying poisson noise'); end
+            im_f = imnoise(im_f,'poisson'); % add poisson noise
+        end
+        %% write tiff files
+        write_syth_image(im_f, im_l, fd_n, i_n);
     end
-    
-    if add_poisson
-        if i_n == 1; disp('Applying poisson noise'); end
-        im_f = imnoise(im_f,'poisson'); % add poisson noise
-    end
-    %% write tiff files
-    write_syth_image(im_f, im_l, fd_n, i_n);
-end
 end
 %% save the parameters into a .mat file
 save(fullfile(fd_n, 'im_params.mat'),  '-struct', 'im_info');
