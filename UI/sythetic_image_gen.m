@@ -226,7 +226,7 @@ for i_n = 1:n_im % can make parfor next
 end
 %% save the parameters into a .mat file
 save(fullfile(fd_n, 'im_params.mat'),  '-struct', 'im_info');
-disp('Done generating preview images');
+disp('Done generating images');
 
 
 function preview_num_Callback(hObject, eventdata, handles)
