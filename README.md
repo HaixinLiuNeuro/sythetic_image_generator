@@ -76,7 +76,8 @@ Use  [example script](https://github.com/HaixinLiuNeuro/sythetic_image_generator
 * use point spread function under microscopy condition (e.g., two-photon imaging) 
 
 ## Cell location restriction:
-* non-overlapping 
+* non-overlapping*
+   * in `dev` branch, label images have non-overlapping masks. Rational: to find high intensity cells, we do not want to analyze overlapped areas, which would give false higher readings.   
 * different distribution features
 * user defined locations
 
